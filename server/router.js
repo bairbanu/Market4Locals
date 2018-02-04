@@ -11,6 +11,7 @@ module.exports = app => {
   app.get("/", (request, response) => {
     response.send({ hi: "there" });
   });
+
   app.post("/item", AddItem.addItem);
   app.post("/transaction", NewTransaction.newTransaction);
   app.post("/signin", requireSignin, Authentication.signin);

@@ -1,12 +1,13 @@
 const Item = require('../models/item');
 
 exports.addItem = (request, response, next) => {
-  const { title, img_url, description, isBought, isDelivered, inDelivery } = request.body;
+  const { title, img_url, description, price, isBought, isDelivered, inDelivery } = request.body;
 
   const item = new Item({
     title: title, 
     img_url: img_url,
     description: description,
+    price: price,
     isBought: false,
     isDelivered: false,
     inDelivery: false
@@ -18,5 +19,10 @@ exports.addItem = (request, response, next) => {
     }
   });
 
-  response.json({ saved: "fa show!"})
+  const query = Item.find({});
+
+  query.exec((error, items) =>{
+    if (error) response.send(error)
+    response.json(items);
+  });
 }
