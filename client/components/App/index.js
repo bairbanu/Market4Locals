@@ -2,8 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../../reducers/index.js';
-import { Tabs } from '../Navigation/index.js';
-import { StyleSheet } from 'react-native';
+import Authenticator from '../../containers/Authenticator/index.js';
 const Web3 = require('web3');
 
 export default class App extends React.Component {
@@ -28,14 +27,8 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <Tabs style={styles.navbar} />
+        <Authenticator />
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  navbar: {
-    marginTop: 30,
-  },
-});
