@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, Button } from 'react-native';
 
 export default class MarketCard extends Component {
-  handlePress(event) {
+  handleBuyPress(event) {
     alert('Hey');
+  }
+
+  handleDeliverPress(event) {
+    alert('Holla!');
   }
 
   render() {
@@ -20,13 +24,23 @@ export default class MarketCard extends Component {
           this.props.inDelivery ? (
             <Text style={styles.text}>In Delivery</Text>
           ) : (
-            <Text style={styles.text}>Delivered</Text>
-          )
-        ) : (<Button
-          title="Buy"
-          color="#5800b7"
-          onPress={this.handlePress}
-        />)}
+            this.props.isDelivered ? (
+              <Text style={styles.text}>Delivered</Text>
+            ) : (
+                <Button
+                  title="Deliver"
+                  color="#5800b7"
+                  onPress={this.handleDeliverPress}
+                />
+              )
+            )
+          ) : (
+            <Button
+              title="Buy"
+              color="#5800b7"
+              onPress={this.handleBuyPress}
+            />
+          )}
       </View>
     );
   }
