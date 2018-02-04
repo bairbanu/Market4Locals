@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchItems } from '../../actions/index.js';
+import { fetchItemsSuccess, fetchItemsFailure } from '../../actions/index.js';
 import MarketCard from '../../components/MarketCard';
 
 class MarketList extends Component {
   componentWillMount() {
-    this.props.fetchItems([
+    this.props.fetchItemsSuccess([
       { key: 0,
         title: 'Title1',
         price: '$500',
@@ -74,7 +74,7 @@ function mapStateToProps({ marketList }) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchItems }, dispatch);
+  return bindActionCreators({ fetchItemsSuccess, fetchItemsFailure }, dispatch);
 }
 
 const styles = StyleSheet.create({
