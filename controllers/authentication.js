@@ -31,7 +31,7 @@ exports.signup = (request, response, next) => {
 
     const user = new User({
       name: name,
-      eht_adress: eth_address,
+      eht_address: eth_address,
       email: email,
       password: password,
       address: address
