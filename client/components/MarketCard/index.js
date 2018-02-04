@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, Button } from 'react-native';
 
 export default class MarketCard extends Component {
+  constructor(props) {
+    super(props);
+    this.handleBuyPress = this.handleBuyPress.bind(this);
+    this.handleDeliverPress = this.handleDeliverPress.bind(this);
+  }
+
   handleBuyPress(event) {
     alert('Hey');
   }

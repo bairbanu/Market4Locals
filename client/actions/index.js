@@ -4,6 +4,8 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
+export const LOADING = 'LOADING';
+export const DONE_LOADING = 'DONE_LOADING';
 
 export function fetchItemsSuccess(items) {
   return {
@@ -44,5 +46,19 @@ export function signupFailure() {
   return {
     type: SIGNUP_FAILURE,
     payload: false,
+  };
+}
+
+export function loading() {
+  return {
+    type: LOADING,
+    loading: true,
+  };
+}
+
+export function doneLoading() {
+  return {
+    type: DONE_LOADING,
+    loading: false,
   };
 }

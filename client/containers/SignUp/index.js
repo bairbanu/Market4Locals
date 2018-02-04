@@ -12,6 +12,7 @@ class Login extends Component {
       password: '',
       confirmPassword: '',
     };
+    this.handleSignupPress = this.handleSignupPress.bind(this);
   }
 
   handleSignupPress(event) {

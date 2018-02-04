@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Text, TextInput, StyleSheet, View, Dimensions, Button } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { loading } from '../../actions/index.js';
 
-export default class SellItem extends Component {
+class SellItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,10 +12,11 @@ export default class SellItem extends Component {
       ImgUrl: '',
       Description: '',
     };
+    this.handleSellPress = this.handleSellPress.bind(this);
   }
 
-  handleSellPress(event) {
-    alert('Thanks!');
+  handleSellPress() {
+    this.props.loading();
   }
 
   render() {
@@ -82,3 +86,9 @@ const styles = StyleSheet.create({
     height: 0.25 * Dimensions.get('window').height,
   },
 });
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ loading }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(SellItem);

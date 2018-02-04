@@ -11,6 +11,7 @@ class Login extends Component {
       email: '',
       password: '',
     };
+    this.handleLoginPress = this.handleLoginPress.bind(this);
   }
 
   handleLoginPress(event) {
