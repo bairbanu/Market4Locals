@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, TextInput, StyleSheet, View, Dimensions, Button } from 'react-native';
+import { Text, TextInput, StyleSheet, View, Dimensions } from 'react-native';
+import { Button } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { loginSuccess, loginFailure } from '../../actions/index.js';
@@ -37,7 +38,8 @@ class Login extends Component {
         />
         <Button
           title="Login"
-          color="#5800b7"
+          large
+          backgroundColor="#D44541"
           onPress={this.handleLoginPress}
          />
       </View>

@@ -37,7 +37,7 @@ export default class MarketCard extends Component {
                 <Button
                   title="Deliver"
                   large
-                  backgroundColor="#5800b7"
+                  backgroundColor="#D44541"
                   onPress={this.handleDeliverPress}
                 />
               )
@@ -46,7 +46,7 @@ export default class MarketCard extends Component {
             <Button
               title="Buy"
               large
-              backgroundColor="#5800b7"
+              backgroundColor="#D44541"
               onPress={this.handleBuyPress}
             />
           )}
@@ -60,10 +60,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#0B777A',
   },
   head: {
     fontWeight: 'bold',
     fontSize: 20,
+    color: '#DF9208',
   },
   image: {
     height: 300,
@@ -74,7 +76,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     maxWidth: '75%',
     borderStyle: "solid",
-    borderColor: "black"
+    borderColor: "black",
+    color: '#DF9208',
   },
   deliveryText: {
     fontWeight: 'bold',
