@@ -15,7 +15,9 @@ exports.newTransaction = (request, response, next) => {
       return next(error);
     }
   });
+}
 
+exports.getTransactions = (request, response, next) => {
   const query = Transaction.find({});
 
   query.exec((error, transactions) => {

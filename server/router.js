@@ -12,8 +12,12 @@ module.exports = app => {
     response.send({ hi: "there" });
   });
 
+  app.get("/items", AddItem.getItems);
   app.post("/item", AddItem.addItem);
+
+  app.get("/transactions", NewTransaction.getTransactions);
   app.post("/transaction", NewTransaction.newTransaction);
+
   app.post("/signin", requireSignin, Authentication.signin);
   app.post("/signup", Authentication.signup);
 };
