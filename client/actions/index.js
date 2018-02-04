@@ -1,8 +1,8 @@
-export const FETCH_ITEMS = 'fetch_items';
+import { FETCH_ITEMS_REQUEST } from './types'
 
-export function fetchItems(items) {
+export function fetchItemsRequest(url) {
   return {
-    type: FETCH_ITEMS,
-    payload: items,
+    type: FETCH_ITEMS_REQUEST,
+    payload: url
   };
 }

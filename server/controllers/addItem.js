@@ -4,7 +4,7 @@ exports.addItem = (request, response, next) => {
   const { title, img_url, description, price, isBought, isDelivered, inDelivery } = request.body;
 
   const item = new Item({
-    title: title, 
+    title: title,
     img_url: img_url,
     description: description,
     price: price,
@@ -18,6 +18,7 @@ exports.addItem = (request, response, next) => {
       return next(error);
     }
   });
+  response.send({ status: 'Item saved.' })
 }
 
 exports.getItems = (request, response, next) => {

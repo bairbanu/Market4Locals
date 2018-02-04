@@ -1,9 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { StyleSheet } from 'react-native';
+import { createStore, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import { createLogger } from 'redux-logger';
+import mySaga from '../../sagas/sagas';
 import reducers from '../../reducers/index.js';
 import { Tabs } from '../Navigation/index.js';
-import { StyleSheet } from 'react-native';
 const Web3 = require('web3');
 
 export default class App extends React.Component {
@@ -23,11 +26,16 @@ export default class App extends React.Component {
     this.state = {
       ContractInstance
     }
+
+    const sagaMiddleware = createSagaMiddleware();
+    const loggerMiddleware = createLogger();
+    this.store = createStore(reducers, applyMiddleware(loggerMiddleware, sagaMiddleware))
+    sagaMiddleware.run(mySaga);
   }
 
   render() {
     return (
-      <Provider store={createStore(reducers)}>
+      <Provider store={ this.store }>
         <Tabs style={styles.navbar} />
       </Provider>
     );

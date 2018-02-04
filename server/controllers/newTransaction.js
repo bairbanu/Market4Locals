@@ -22,6 +22,6 @@ exports.getTransactions = (request, response, next) => {
 
   query.exec((error, transactions) => {
     if (error) response.send(error);
-    response.json(transactions);
+    return response.json(transactions);
   });
 }
