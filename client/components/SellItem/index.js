@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TextInput, StyleSheet, View, Dimensions } from 'react-native';
+import { Text, TextInput, StyleSheet, View, Dimensions, Button } from 'react-native';
 
 export default class SellItem extends Component {
   constructor(props) {
@@ -9,6 +9,10 @@ export default class SellItem extends Component {
       ImgUrl: '',
       Description: '',
     };
+  }
+
+  handleSellPress(event) {
+    alert('Thanks!');
   }
 
   render() {
@@ -35,6 +39,11 @@ export default class SellItem extends Component {
           onChangeText={(Description) => this.setState({ Description })}
           value={this.state.Description}
         />
+        <Button
+          title="Sell"
+          color="#5800b7"
+          onPress={this.handleSellPress}
+         />
       </View>
     );
   }
