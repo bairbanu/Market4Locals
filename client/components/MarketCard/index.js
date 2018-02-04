@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, Image, StyleSheet, Button } from 'react-native';
+import { Text, View, Image, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
 export default class MarketCard extends Component {
   constructor(props) {
@@ -35,7 +36,8 @@ export default class MarketCard extends Component {
             ) : (
                 <Button
                   title="Deliver"
-                  color="#5800b7"
+                  large
+                  backgroundColor="#5800b7"
                   onPress={this.handleDeliverPress}
                 />
               )
@@ -43,7 +45,8 @@ export default class MarketCard extends Component {
           ) : (
             <Button
               title="Buy"
-              color="#5800b7"
+              large
+              backgroundColor="#5800b7"
               onPress={this.handleBuyPress}
             />
           )}
@@ -67,10 +70,19 @@ const styles = StyleSheet.create({
     width: 300,
   },
   text: {
+    padding: 10,
+    fontSize: 20,
     maxWidth: '75%',
+    borderStyle: "solid",
+    borderColor: "black"
   },
   deliveryText: {
     fontWeight: 'bold',
     fontSize: 10,
   },
+  button: {
+    color: "#5800b7",
+    borderStyle: "solid",
+    borderColor: "black"
+  }
 });

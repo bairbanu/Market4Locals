@@ -1,4 +1,5 @@
 export const FETCH_ITEMS_SUCCESS = 'FETCH_ITEMS_SUCCESS';
+export const FETCH_ITEMS_REQUEST = 'FETCH_ITEMS_REQUEST';
 export const FETCH_ITEMS_FAILURE = 'FETCH_ITEMS_FAILURE';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
@@ -6,6 +7,13 @@ export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_FAILURE = 'SIGNUP_FAILURE';
 export const LOADING = 'LOADING';
 export const DONE_LOADING = 'DONE_LOADING';
+
+export function fetchItemsRequest(url) {
+  return {
+    type: FETCH_ITEMS_REQUEST,
+    payload: url
+  }
+}
 
 export function fetchItemsSuccess(items) {
   return {

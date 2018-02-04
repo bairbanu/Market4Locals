@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Provider store={createStore(reducers)}>
+      <Provider store={ this.store }>
         <Authenticator />
       </Provider>
     );
