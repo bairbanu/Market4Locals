@@ -15,6 +15,13 @@ exports.newTransaction = (request, response, next) => {
       return next(error);
     }
   });
+}
 
-  response.json({ transaction: "saved!" });
+exports.getTransactions = (request, response, next) => {
+  const query = Transaction.find({});
+
+  query.exec((error, transactions) => {
+    if (error) response.send(error);
+    response.json(transactions);
+  });
 }

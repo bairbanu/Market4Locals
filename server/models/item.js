@@ -5,6 +5,7 @@ const itemSchema = new Schema({
   title: String,
   img_url: String,
   description: String,
+  price: String,
   isBought: Boolean,
   isDelivered: Boolean,
   inDelivery: Boolean
