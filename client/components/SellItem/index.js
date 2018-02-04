@@ -71,5 +71,5 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     width: Dimensions.get('window').width,
     height: 0.25 * Dimensions.get('window').height,
-  }
+  },
 });
