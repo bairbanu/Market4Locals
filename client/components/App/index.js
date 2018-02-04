@@ -26,7 +26,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    this.state.ContractInstance.methods.paymentAccepted().call().then(console.log)
     return (
       <Provider store={createStore(reducers)}>
         <Tabs style={styles.navbar} />
