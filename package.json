@@ -22,7 +22,6 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
