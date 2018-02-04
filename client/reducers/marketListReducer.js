@@ -59,6 +59,10 @@ export default function(state = { isLoggedIn: true }, action) {
         isLoggedIn: state.isLoggedIn,
         loading: action.loading,
       };
+    case FETCH_ITEMS_FAILURE:
+      return {
+        error: action.error
+      }
     default:
       return state;
   }
