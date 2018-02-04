@@ -6,7 +6,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createLogger } from 'redux-logger';
 import mySaga from '../../sagas/sagas';
 import reducers from '../../reducers/index.js';
-import { Tabs } from '../Navigation/index.js';
+import Authenticator from '../../containers/Authenticator/index.js';
 const Web3 = require('web3');
 
 export default class App extends React.Component {
@@ -35,15 +35,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Provider store={ this.store }>
-        <Tabs style={styles.navbar} />
+      <Provider store={createStore(reducers)}>
+        <Authenticator />
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  navbar: {
-    marginTop: 30,
-  },
-});

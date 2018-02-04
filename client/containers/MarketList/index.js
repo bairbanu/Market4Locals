@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchItemsRequest } from '../../actions/index.js';
+import { fetchItemsRequest, fetchItemsSuccess, fetchItemsFailure } from '../../actions/index.js';
 import MarketCard from '../../components/MarketCard';
 
 class MarketList extends Component {
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, { fetchItemsRequest })(MarketList);
+export default connect(mapStateToProps, { fetchItemsRequest, fetchItemsSuccess, fetchItemsFailure })(MarketList);

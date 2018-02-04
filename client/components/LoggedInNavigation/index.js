@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { TabNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import MarketList from '../../containers/MarketList/index.js';
 import SellItem from '../SellItem/index.js';
 
-export const Tabs = TabNavigator({
+export const LoggedInTabs = TabNavigator({
   Buy: {
     screen: MarketList,
     navigationOptions: {
