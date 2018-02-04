@@ -8,7 +8,7 @@ const Web3 = require('web3');
 export default class App extends React.Component {
   componentWillMount() {
     const web3 = new Web3(
-      new Web3.providers.HttpProvider('https://mainnet.infura.io/')
+      new Web3.providers.HttpProvider('https://ropsten.infura.io/')
     );
 
     web3.eth.getBlock('latest').then(console.log)
