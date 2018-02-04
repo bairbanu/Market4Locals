@@ -1,0 +1,24 @@
+{
+  "name": "market4locals",
+  "version": "1.0.0",
+  "description": "A marketplace that digitizes and incentives 'garage sales' using blockchain. The platform enables buyers/sellers/drivers to create local economies to move physical goods with fluidity. Drivers are incentivized to earn money by delivering goods (much like Lyft / Uber), and sellers can get rid of items they no longer desire and have someone pick it up for them. Buyers can tap their local economy and support their communities.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Patrick Porche <pporche87@gmail.com> (http://pporche87.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^5.0.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.11",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.1",
+    "passport-local": "^1.0.0"
+  }
+}
