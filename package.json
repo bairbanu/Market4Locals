@@ -1,15 +1,32 @@
 {
-  "name": "market4locals",
-  "version": "1.0.0",
-  "description": "A marketplace that digitizes and incentives 'garage sales' using blockchain. The platform enables buyers/sellers/drivers to create local economies to move physical goods with fluidity. Drivers are incentivized to earn money by delivering goods (much like Lyft / Uber), and sellers can get rid of items they no longer desire and have someone pick it up for them. Buyers can tap their local economy and support their communities.",
-  "main": "index.js",
+  "name": "Market4Locals",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "jest-expo": "25.0.0",
+    "react-native-scripts": "^1.11.1",
+    "react-test-renderer": "16.2.0"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js"
   },
-  "author": "Patrick Porche <pporche87@gmail.com> (http://pporche87.com/)",
-  "license": "MIT",
+  "jest": {
+    "preset": "jest-expo"
+  },
   "dependencies": {
+    "expo": "^25.0.0",
+    "node-libs-browser": "^2.1.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0",
+    "web3": "^1.0.0-beta.29",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
